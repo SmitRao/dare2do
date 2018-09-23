@@ -5,9 +5,8 @@ to a stranger!', 'Produce a video log.', 'Write an article.',
 'Sell something!', 'Meditate.', 'Learn a foreign language.', 'Practice \
 a new programming language.', 'Write down 5 things you are grateful \
 for.', 'Spend time with friends.', 'Faites le ménage.', 'Dance or sing \
-to a song you really like.', 'Listen to an audiobook.', 'Go for a run \
-if possible. Otherwise, do 30 pushups, 40 situps, 50 squats or \
-go to the gym.', 'Play squash if possible.', 'Swim if possible.', 'Go \
+to a song you really like.', 'Listen to an audiobook.', 'Play squash if \
+possible.', 'Swim if possible.', 'Go \
 to the gym.', 'Play basketball if possible.', 'Talk to someone \
 wise.', 'Give someone a warm hug.', 'Cook something really tasty and \
 nutritious.', 'Eat fruits.', 'Eat vegetables.', 'Help \
@@ -36,8 +35,8 @@ risk, optimal reward.', 'Drink lots of water.', 'Do laundry.', 'Seek \
 opportunities.', 'Reflect on things that recently happened.', 'Smell the \
 flowers, take time off for yourself, relax (in a good way).', 'Brush \
 teeth.', 'Clean the house.', 'Compliment someone.', 'Volunteer \
-somewhere.', 'Go for a brisk walk.', 'Dance to your favorite tunes.', 'Do \
-pullups until exhaustion.', 'Share a story (fiction or personal experience) \
+somewhere.', 'Go for a brisk walk.', 'Dance to your favorite tunes.', 'Share \
+a story (fiction or personal experience) \
 with someone.', 'Come up with a business idea based on a particular \
 problem or opportunity.', 'Get some fresh air.', 'Ensure you receive enough \
 nutrients (vitamins, omegas, minerals, protein).', 'Record your \
@@ -49,7 +48,11 @@ one minute.', 'Post a 1000 word Facebook status for no reason', 'Jump rope \
 less than a minute.', 'Read a research paper.'];
 
 var dDares = ['Speak in public.', 'Pitch a controversial idea.', '\
-Ask someone out.', 'Create Big Things'];
+Ask someone out.', 'Create Big Things', 'Do \
+pullups until exhaustion.', 'Cook a healthy meal.', 'Go vegetarian.', 'Go for \
+a run \
+if possible. Otherwise, do 30 pushups, 40 situps, 50 squats or \
+go to the gym.'];
 
 function advDare() {
   document.getElementById("prompt").innerHTML = aDares[Math.floor(Math.random() * aDares.length)];
