@@ -7,95 +7,53 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-   <!--<title>Hello, world!</title> -->
+    <style>
+    #dangerdare {}
+    </style>
   </head>
-  
+
   <body style="background-color: black;">
-	<button onclick="premium()" type="button" class="btn btn-outline-light">Premium</button>
-  
+	<button onclick="premium()" style="margin: 2.5em;" type="button" class="btn btn-outline-light">Premium</button>
+
 	<br></br>
-	<div style="padding-bottom: 30px; padding-top: 30px; padding-left: 10px;">
+	<div style="padding-bottom: 30px; padding-top: 30px; padding-left: 10px;"></div>
 
     <div class="text-center" style="padding: 2em;">
-      <button onclick="advDare()" type="button" style="margin-right: 1em; size: 2em; border-radius: 0.5em; font-size: 4em; padding: 1em;" class="btn btn-outline-light">Adventurous Dare</button>
-      <button onclick="danDare()" type="button" style="margin-left: 1em; size: 2em; border-radius: 0.5em; font-size: 4em; padding: 1em;" class="btn btn-outline-light">&nbsp; Dangerous Dare &nbsp;</button>
+      <button onclick="advDare()" type="button" style="margin-right: 1em; size: 2em; border-radius: 0.1em; font-size: 4em; padding: 1em;" class="btn btn-outline-light">Adventurous Dare</button>
+      <button id="dangerdare" onmouseover="document.getElementById('dangerdare').style.color = 'red'" onmouseout="document.getElementById('dangerdare').style.color = 'white'" onclick="danDare()" type="button" style="margin-left: 1em; size: 2em; border-radius: 0.1em; font-size: 4em; padding: 1em;" class="btn btn-outline-light">Dangerous Dare</button>
     </div>
 
-	<p id="prompt" style="color:white; font-size:350%; display:"block;" align="center" ></p>
-	
-	<div class="dropdown show">
-	  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" align="center;" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+
+	<p id="prompt" style="color:white; font-size:350%; display:block;" align="center"></p>
+
+	<div class="dropdown show text-center">
+	  <a class="btn btn-secondary dropdown-toggle" style="font-size: 2.2em;" href="#" role="button" align="center;" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		What Now?
 	  </a>
 
 	  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-		<a class="dropdown-item" href="https://github.com/" target="__blank;">Share your project to Github!</a>
-		<a class="dropdown-item" href="?">Choose another Dare</a>
+		<a class="dropdown-item" href="https://github.com/" style="font-size: 1.5em;" target="__blank;">Share your project to Github!</a>
+		<a class="dropdown-item" style="font-size: 1.5em;" href="?">Choose another Dare</a>
 	  </div>
 	</div>
-	
-	<script>
-		var aDares = ["Create", "Develop", "Imagine"];
-		var dDares = ["Create Big Things", "Develop!!!", "Dream"];
-		
-		function advDare() {
-			document.getElementById("prompt").innerHTML = aDares[Math.floor(Math.random() * aDares.length)];
-			var x = document.getElementById("prompt");
-			if (x.style.visibility === "block") {
-				<!-- x.style.visibility = "slow"; -->
-				fadeIn(x);
-			} else if (x.style.visibility === "none") {
-				<!-- x.style.visibility = "block"; -->
-				fadeOut(x);
-			}
-		}
-		
-		function danDare() {
-			document.getElementById("prompt").innerHTML = dDares[Math.floor(Math.random() * dDares.length)];
-			var x = document.getElementById("prompt");
-			if (x.style.visibility === "block") {
-				x.style.visibility = "slow";
-			} else {
-				x.style.visibility = "block";
-			}
-		}
-		// fade out
 
-		function fadeOut(el){
-		  el.style.opacity = 1;
 
-		  (function fade() {
-			if ((el.style.opacity -= .1) < 0) {
-			  el.style.display = "none";
-			} else {
-			  requestAnimationFrame(fade);
-			}
-		  })();
-		}
 
-		// fade in
-
-		function fadeIn(el, display){
-		  el.style.opacity = 0;
-		  el.style.display = display || "block";
-
-		  (function fade() {
-			var val = parseFloat(el.style.opacity);
-			if (!((val += .1) > 1)) {
-			  el.style.opacity = val;
-			  requestAnimationFrame(fade);
-			}
-		  })();
-		}
-				
-	</script>
-	
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script>
+    // With the element initially hidden, we can show it slowly:
+    $( "#clickme" ).click(function() {
+      $( "#book" ).fadeIn( "slow", function() {
+        // Animation complete
+      });
+    });
+    </script>
   </body>
 </html>
