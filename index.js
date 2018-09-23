@@ -56,50 +56,8 @@ go to the gym.'];
 
 function advDare() {
   document.getElementById("prompt").innerHTML = aDares[Math.floor(Math.random() * aDares.length)];
-  var x = document.getElementById("prompt");
-  if (x.style.visibility === "block") {
-    <!-- x.style.visibility = "slow"; -->
-    fadeIn(x);
-  } else if (x.style.visibility === "none") {
-    <!-- x.style.visibility = "block"; -->
-    fadeOut(x);
-  }
 }
 
 function danDare() {
   document.getElementById("prompt").innerHTML = dDares[Math.floor(Math.random() * dDares.length)];
-  var x = document.getElementById("prompt");
-  if (x.style.visibility === "block") {
-    x.style.visibility = "slow";
-  } else {
-    x.style.visibility = "block";
-  }
-}
-// fade out
-
-function fadeOut(el){
-  el.style.opacity = 1;
-
-  (function fade() {
-  if ((el.style.opacity -= .1) < 0) {
-    el.style.display = "none";
-  } else {
-    requestAnimationFrame(fade);
-  }
-  })();
-}
-
-// fade in
-
-function fadeIn(el, display){
-  el.style.opacity = 0;
-  el.style.display = display || "block";
-
-  (function fade() {
-  var val = parseFloat(el.style.opacity);
-  if (!((val += .1) > 1)) {
-    el.style.opacity = val;
-    requestAnimationFrame(fade);
-  }
-  })();
 }
